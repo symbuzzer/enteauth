@@ -1,0 +1,36 @@
+name: Build
+on: [workflow_dispatch]
+
+jobs:
+  ubuntu-touch:
+    strategy:
+      fail-fast: false
+      matrix:
+         build: [Release, Debug]
+         arch: [all]
+         version: ['refs/tags/5.2.1-enteauth']
+
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install clickable
+        run: |
+          # For whatever reason, I have to manually install runc before docker.io or containerd, else it fails because of broken dependency
+          # Using apt-get because apt complains it shouldn't be used in scripts
+          sudo apt-get update
+          sudo apt-get install -y runc
+          sudo apt-get install -y docker.io adb git python3 python3-pip
+          pip3 install --user git+https://gitlab.com/clickable/clickable.git@debug
+          # Clickable requires a reboot/logout. This is a sneaky way to bypass that :^)
+          sudo systemctl unmask docker.service
+          sudo systemctl start docker.service
+      - name: Build
+        env:
+          BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
+          ARCH: ${{ matrix.arch }}
+        run: ~/.local/bin/clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
+      - uses: actions/upload-artifact@v2
+        with:
+          name: "ubports-${{ matrix.arch }}--click"
+          path: "build/*/app/*.click"
+          if-no-files-found: ignore
