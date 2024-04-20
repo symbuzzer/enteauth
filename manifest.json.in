@@ -1,0 +1,15 @@
+{
+    "name": "enteauth.symbuzzer",
+    "description": "Unofficial client of open-source authenticator app that will let you backup and view your 2FA secrets",
+    "architecture": "@CLICK_ARCH@",
+    "title": "enteauth",
+    "hooks": {
+        "enteauth": {
+            "apparmor": "enteauth.apparmor",
+            "desktop":  "enteauth.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Ali BEYAZ <alipolatbeyaz@gmail.com>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
