@@ -1,3 +1,6 @@
+## v1.0.4
+- Removed App Title section
+
 ## v1.0.3
 - Reverted Title background to dark due auth.ente.io only supports dark theme for now
 
