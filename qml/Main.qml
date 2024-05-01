@@ -41,11 +41,6 @@ MainView {
     Page {
         anchors.fill: parent
 
-        header: PageHeader {
-            id: header
-            title: i18n.tr('enteauth - unofficial')
-        }
-
     WebEngineView {
         id: webview
         anchors.fill: parent
