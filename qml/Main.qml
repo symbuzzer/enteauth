@@ -33,6 +33,7 @@ MainView {
     id: root
     objectName: 'mainView'
     applicationName: 'enteauth.symbuzzer'
+    theme.name: "Lomiri.Components.Themes.SuruDark"
 
     width: units.gu(45)
     height: units.gu(75)
