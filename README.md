@@ -10,7 +10,7 @@ Unofficial [Ente Auth](https://ente.io/blog/auth/) client for Ubuntu Touch
 - Also [build workflow](https://github.com/symbuzzer/enteauth/blob/master/.github/workflows/clickable.yml) is from [Mateo Salta](https://github.com/mateosalta)'s [cuddly-bassoon](https://github.com/mateosalta/cuddly-bassoon) app licensed under GNU General Public License version 3
 
 ## Changelog
-[CHANGELOG.md](https://github.com/symbuzzer/enteauth/blob/main/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/symbuzzer/enteauth/blob/master/CHANGELOG.md)
 
 ## Download
 [![OpenStore](https://open-store.io/badges/en_US.png)](https://open-store.io/app/enteauth.symbuzzer)
