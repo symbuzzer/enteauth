@@ -11,6 +11,3 @@ Unofficial [Ente Auth](https://ente.io/blog/auth/) client for Ubuntu Touch
 
 ## Changelog
 [CHANGELOG.md](https://github.com/symbuzzer/enteauth/blob/master/CHANGELOG.md)
-
-## Download
-[![OpenStore](https://open-store.io/badges/en_US.png)](https://open-store.io/app/enteauth.symbuzzer)
